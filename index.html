@@ -10,8 +10,213 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $('input').on('change', update_values);
-        // $('input').on('keyup', update_values);
+        $('#pre_recorded_sets a').on('click', update_layout)
 
+        function update_layout(e) {
+          if ( $(this).hasClass('vd') ) {
+            $('input.slice_1.left').val(0).trigger('change');
+            $('input.slice_2.left').val(0).trigger('change');
+            $('input.slice_3.left').val(0).trigger('change');
+            $('input.slice_4.left').val(0).trigger('change');
+            $('input.slice_5.left').val(0).trigger('change');
+
+            $('input.slice_1.top').val(0).trigger('change');
+            $('input.slice_2.top').val(20).trigger('change');
+            $('input.slice_3.top').val(40).trigger('change');
+            $('input.slice_4.top').val(60).trigger('change');
+            $('input.slice_5.top').val(80).trigger('change');
+
+            $('input.slice_1.width').val(200).trigger('change');
+            $('input.slice_2.width').val(200).trigger('change');
+            $('input.slice_3.width').val(200).trigger('change');
+            $('input.slice_4.width').val(200).trigger('change');
+            $('input.slice_5.width').val(200).trigger('change');
+
+            $('input.slice_1.height').val(15).trigger('change');
+            $('input.slice_2.height').val(15).trigger('change');
+            $('input.slice_3.height').val(15).trigger('change');
+            $('input.slice_4.height').val(15).trigger('change');
+            $('input.slice_5.height').val(15).trigger('change');
+          }
+          if ( $(this).hasClass('hd') ) {
+
+            $('input.slice_1.left').val(0).trigger('change');
+            $('input.slice_2.left').val(20).trigger('change');
+            $('input.slice_3.left').val(40).trigger('change');
+            $('input.slice_4.left').val(60).trigger('change');
+            $('input.slice_5.left').val(80).trigger('change');
+
+            $('input.slice_1.top').val(0).trigger('change');
+            $('input.slice_2.top').val(0).trigger('change');
+            $('input.slice_3.top').val(0).trigger('change');
+            $('input.slice_4.top').val(0).trigger('change');
+            $('input.slice_5.top').val(0).trigger('change');
+
+            $('input.slice_1.width').val(15).trigger('change');
+            $('input.slice_2.width').val(15).trigger('change');
+            $('input.slice_3.width').val(15).trigger('change');
+            $('input.slice_4.width').val(15).trigger('change');
+            $('input.slice_5.width').val(15).trigger('change');
+
+            $('input.slice_1.height').val(200).trigger('change');
+            $('input.slice_2.height').val(200).trigger('change');
+            $('input.slice_3.height').val(200).trigger('change');
+            $('input.slice_4.height').val(200).trigger('change');
+            $('input.slice_5.height').val(200).trigger('change');
+          }
+          if ( $(this).hasClass('co') ) {
+
+            $('input.slice_1.left').val(0).trigger('change');
+            $('input.slice_2.left').val(20).trigger('change');
+            $('input.slice_3.left').val(40).trigger('change');
+            $('input.slice_4.left').val(60).trigger('change');
+            $('input.slice_5.left').val(80).trigger('change');
+
+            $('input.slice_1.top').val(0).trigger('change');
+            $('input.slice_2.top').val(20).trigger('change');
+            $('input.slice_3.top').val(40).trigger('change');
+            $('input.slice_4.top').val(60).trigger('change');
+            $('input.slice_5.top').val(80).trigger('change');
+
+            $('input.slice_1.width').val(260).trigger('change');
+            $('input.slice_2.width').val(220).trigger('change');
+            $('input.slice_3.width').val(180).trigger('change');
+            $('input.slice_4.width').val(140).trigger('change');
+            $('input.slice_5.width').val(100).trigger('change');
+
+            $('input.slice_1.height').val(260).trigger('change');
+            $('input.slice_2.height').val(220).trigger('change');
+            $('input.slice_3.height').val(180).trigger('change');
+            $('input.slice_4.height').val(140).trigger('change');
+            $('input.slice_5.height').val(100).trigger('change');
+          }
+
+          if ($(this).hasClass('st')) {
+
+            $('input.slice_1.transition_left').val(2000).trigger('change');
+            $('input.slice_2.transition_left').val(2000).trigger('change');
+            $('input.slice_3.transition_left').val(2000).trigger('change');
+            $('input.slice_4.transition_left').val(2000).trigger('change');
+            $('input.slice_5.transition_left').val(2000).trigger('change');
+
+            $('input.slice_1.transition_top').val(2000).trigger('change');
+            $('input.slice_2.transition_top').val(2000).trigger('change');
+            $('input.slice_3.transition_top').val(2000).trigger('change');
+            $('input.slice_4.transition_top').val(2000).trigger('change');
+            $('input.slice_5.transition_top').val(2000).trigger('change');
+
+            $('input.slice_1.transition_width').val(2000).trigger('change');
+            $('input.slice_2.transition_width').val(2000).trigger('change');
+            $('input.slice_3.transition_width').val(2000).trigger('change');
+            $('input.slice_4.transition_width').val(2000).trigger('change');
+            $('input.slice_5.transition_width').val(2000).trigger('change');
+
+            $('input.slice_1.transition_height').val(2000).trigger('change');
+            $('input.slice_2.transition_height').val(2000).trigger('change');
+            $('input.slice_3.transition_height').val(2000).trigger('change');
+            $('input.slice_4.transition_height').val(2000).trigger('change');
+            $('input.slice_5.transition_height').val(2000).trigger('change');
+
+          }
+          if ($(this).hasClass('ft')) {
+
+            $('input.slice_1.transition_left').val(200).trigger('change');
+            $('input.slice_2.transition_left').val(200).trigger('change');
+            $('input.slice_3.transition_left').val(200).trigger('change');
+            $('input.slice_4.transition_left').val(200).trigger('change');
+            $('input.slice_5.transition_left').val(200).trigger('change');
+            $('input.slice_1.transition_top').val(200).trigger('change');
+            $('input.slice_2.transition_top').val(200).trigger('change');
+            $('input.slice_3.transition_top').val(200).trigger('change');
+            $('input.slice_4.transition_top').val(200).trigger('change');
+            $('input.slice_5.transition_top').val(200).trigger('change');
+            $('input.slice_1.transition_width').val(200).trigger('change');
+            $('input.slice_2.transition_width').val(200).trigger('change');
+            $('input.slice_3.transition_width').val(200).trigger('change');
+            $('input.slice_4.transition_width').val(200).trigger('change');
+            $('input.slice_5.transition_width').val(200).trigger('change');
+            $('input.slice_1.transition_height').val(200).trigger('change');
+            $('input.slice_2.transition_height').val(200).trigger('change');
+            $('input.slice_3.transition_height').val(200).trigger('change');
+            $('input.slice_4.transition_height').val(200).trigger('change');
+            $('input.slice_5.transition_height').val(200).trigger('change');
+
+          }
+          if ($(this).hasClass('at')) {
+
+            $('input.slice_1.transition_left').val(100).trigger('change');
+            $('input.slice_2.transition_left').val(200).trigger('change');
+            $('input.slice_3.transition_left').val(300).trigger('change');
+            $('input.slice_4.transition_left').val(400).trigger('change');
+            $('input.slice_5.transition_left').val(500).trigger('change');
+            $('input.slice_1.transition_top').val(100).trigger('change');
+            $('input.slice_2.transition_top').val(200).trigger('change');
+            $('input.slice_3.transition_top').val(300).trigger('change');
+            $('input.slice_4.transition_top').val(400).trigger('change');
+            $('input.slice_5.transition_top').val(500).trigger('change');
+            $('input.slice_1.transition_width').val(100).trigger('change');
+            $('input.slice_2.transition_width').val(200).trigger('change');
+            $('input.slice_3.transition_width').val(300).trigger('change');
+            $('input.slice_4.transition_width').val(400).trigger('change');
+            $('input.slice_5.transition_width').val(500).trigger('change');
+            $('input.slice_1.transition_height').val(100).trigger('change');
+            $('input.slice_2.transition_height').val(200).trigger('change');
+            $('input.slice_3.transition_height').val(300).trigger('change');
+            $('input.slice_4.transition_height').val(400).trigger('change');
+            $('input.slice_5.transition_height').val(500).trigger('change');
+
+          }
+          if ($(this).hasClass('slt')) {
+
+            $('input.slice_1.transition_left').val(1000).trigger('change');
+            $('input.slice_2.transition_left').val(800).trigger('change');
+            $('input.slice_3.transition_left').val(600).trigger('change');
+            $('input.slice_4.transition_left').val(400).trigger('change');
+            $('input.slice_5.transition_left').val(200).trigger('change');
+            $('input.slice_1.transition_top').val(1000).trigger('change');
+            $('input.slice_2.transition_top').val(800).trigger('change');
+            $('input.slice_3.transition_top').val(600).trigger('change');
+            $('input.slice_4.transition_top').val(400).trigger('change');
+            $('input.slice_5.transition_top').val(200).trigger('change');
+            $('input.slice_1.transition_width').val(1000).trigger('change');
+            $('input.slice_2.transition_width').val(800).trigger('change');
+            $('input.slice_3.transition_width').val(600).trigger('change');
+            $('input.slice_4.transition_width').val(400).trigger('change');
+            $('input.slice_5.transition_width').val(200).trigger('change');
+            $('input.slice_1.transition_height').val(1000).trigger('change');
+            $('input.slice_2.transition_height').val(800).trigger('change');
+            $('input.slice_3.transition_height').val(600).trigger('change');
+            $('input.slice_4.transition_height').val(400).trigger('change');
+            $('input.slice_5.transition_height').val(200).trigger('change');
+
+          }
+
+          if ($(this).hasClass('randt')) {
+
+            $('input.slice_1.transition_left').val(Math.random() * 2000).trigger('change');
+            $('input.slice_2.transition_left').val(Math.random() * 2000).trigger('change');
+            $('input.slice_3.transition_left').val(Math.random() * 2000).trigger('change');
+            $('input.slice_4.transition_left').val(Math.random() * 2000).trigger('change');
+            $('input.slice_5.transition_left').val(Math.random() * 2000).trigger('change');
+            $('input.slice_1.transition_top').val(Math.random() * 2000).trigger('change');
+            $('input.slice_2.transition_top').val(Math.random() * 2000).trigger('change');
+            $('input.slice_3.transition_top').val(Math.random() * 2000).trigger('change');
+            $('input.slice_4.transition_top').val(Math.random() * 2000).trigger('change');
+            $('input.slice_5.transition_top').val(Math.random() * 2000).trigger('change');
+            $('input.slice_1.transition_width').val(Math.random() * 2000).trigger('change');
+            $('input.slice_2.transition_width').val(Math.random() * 2000).trigger('change');
+            $('input.slice_3.transition_width').val(Math.random() * 2000).trigger('change');
+            $('input.slice_4.transition_width').val(Math.random() * 2000).trigger('change');
+            $('input.slice_5.transition_width').val(Math.random() * 2000).trigger('change');
+            $('input.slice_1.transition_height').val(Math.random() * 2000).trigger('change');
+            $('input.slice_2.transition_height').val(Math.random() * 2000).trigger('change');
+            $('input.slice_3.transition_height').val(Math.random() * 2000).trigger('change');
+            $('input.slice_4.transition_height').val(Math.random() * 2000).trigger('change');
+            $('input.slice_5.transition_height').val(Math.random() * 2000).trigger('change');
+
+          }
+
+        }
         function update_values(e) {
           var ele = e.currentTarget;
           className_array = $(ele).attr('class').split(' ');
@@ -21,13 +226,17 @@
           var value = $(ele).val()+unit;
           var selector = '#' + className_array[0];
           
-          $(selector).css(param,value);
-          $(selector).css({'border':'10x solid red'});
-          // setTimeout(function(){ $(selector).css({'border':'unset'}); }, 500);
-          console.log(selector, param, value, unit);
-          console.log($(selector));
 
-          console.log($(selector).css('left'));
+          if (param.includes('transition_')) {
+            console.log('transition occuring');
+
+            var property = param.replace("transition_", "");
+            var string_value = property + value + "ease-in-out 0ms";
+            $(selector).css('transition',value);
+          } else {
+            $(selector).css(param,value);  
+          }
+          
         }
       });
     </script>
@@ -36,6 +245,11 @@
       h1 {
         font-size:  1rem;
         font-family: monospace;
+      }
+      h2 {
+        font-size:  0.9rem;
+        font-family: monospace;
+        margin-left:  1rem;
       }
       input {
         width: 40px;
@@ -55,6 +269,11 @@
         height:  50px;
         top:  100px;
         left:  100px;
+
+        transition:  left 0s ease-in-out 0ms,
+                     top 0s ease-in-out 0ms,
+                     width 0s ease-in-out 0ms,
+                     height 0s ease-in-out 0ms;
       }
       #slice_1 { background-color: red; }
       #slice_2 { background-color: blue; }
@@ -76,31 +295,78 @@
   </div>
 
   <div id='values_control'>
+
+    <div id='pre_recorded_sets'>
+      <h1>Pre configured values</h1>
+      <a href='#' class='vd'>vertical dispatch</a>
+      <a href='#' class='hd'>horizontal dispatch</a>
+      <a href='#' class='co'>containing</a>
+
+      <a href='#' class='st'>slow transition</a>
+      <a href='#' class='ft'>fast transition</a>
+      <a href='#' class='at'>accelerationg transition</a>
+      <a href='#' class='slt'>slowing transition</a>
+      <a href='#' class='randt'>randomised values transition</a>
+      
+    </div>
+
     <h1>Left</h1>
-    <input type='number' class='slice_1 left' unit='px'>
-    <input type='number' class='slice_2 left' unit='px'>
-    <input type='number' class='slice_3 left' unit='px'>
-    <input type='number' class='slice_4 left' unit='px'>
-    <input type='number' class='slice_5 left' unit='px'>
+      <input type='number' class='slice_1 left' unit='px'>
+      <input type='number' class='slice_2 left' unit='px'>
+      <input type='number' class='slice_3 left' unit='px'>
+      <input type='number' class='slice_4 left' unit='px'>
+      <input type='number' class='slice_5 left' unit='px'>
+
+      <h2>Transitions</h2>
+        <input type='number' class='slice_1 transition_left' unit='ms'>
+        <input type='number' class='slice_2 transition_left' unit='ms'>
+        <input type='number' class='slice_3 transition_left' unit='ms'>
+        <input type='number' class='slice_4 transition_left' unit='ms'>
+        <input type='number' class='slice_5 transition_left' unit='ms'>
+
     <h1>Top</h1>
-    <input type='number' class='slice_1 top' unit='px'>
-    <input type='number' class='slice_2 top' unit='px'>
-    <input type='number' class='slice_3 top' unit='px'>
-    <input type='number' class='slice_4 top' unit='px'>
-    <input type='number' class='slice_5 top' unit='px'>
+      <input type='number' class='slice_1 top' unit='px'>
+      <input type='number' class='slice_2 top' unit='px'>
+      <input type='number' class='slice_3 top' unit='px'>
+      <input type='number' class='slice_4 top' unit='px'>
+      <input type='number' class='slice_5 top' unit='px'>
+
+      <h2>Transitions</h2>
+        <input type='number' class='slice_1 transition_top' unit='ms'>
+        <input type='number' class='slice_2 transition_top' unit='ms'>
+        <input type='number' class='slice_3 transition_top' unit='ms'>
+        <input type='number' class='slice_4 transition_top' unit='ms'>
+        <input type='number' class='slice_5 transition_top' unit='ms'>
+
     <h1>Width</h1>
-    <input type='number' class='slice_1 width' unit='px'>
-    <input type='number' class='slice_2 width' unit='px'>
-    <input type='number' class='slice_3 width' unit='px'>
-    <input type='number' class='slice_4 width' unit='px'>
-    <input type='number' class='slice_5 width' unit='px'>
+      <input type='number' class='slice_1 width' unit='px'>
+      <input type='number' class='slice_2 width' unit='px'>
+      <input type='number' class='slice_3 width' unit='px'>
+      <input type='number' class='slice_4 width' unit='px'>
+      <input type='number' class='slice_5 width' unit='px'>
+
+      <h2>Transitions</h2>
+        <input type='number' class='slice_1 transition_width' unit='ms'>
+        <input type='number' class='slice_2 transition_width' unit='ms'>
+        <input type='number' class='slice_3 transition_width' unit='ms'>
+        <input type='number' class='slice_4 transition_width' unit='ms'>
+        <input type='number' class='slice_5 transition_width' unit='ms'>
+
     <h1>Height</h1>
-    <input type='number' class='slice_1 height' unit='px'>
-    <input type='number' class='slice_2 height' unit='px'>
-    <input type='number' class='slice_3 height' unit='px'>
-    <input type='number' class='slice_4 height' unit='px'>
-    <input type='number' class='slice_5 height' unit='px'>
-  </div>
+      <input type='number' class='slice_1 height' unit='px'>
+      <input type='number' class='slice_2 height' unit='px'>
+      <input type='number' class='slice_3 height' unit='px'>
+      <input type='number' class='slice_4 height' unit='px'>
+      <input type='number' class='slice_5 height' unit='px'>
+
+      <h2>Transitions</h2>
+        <input type='number' class='slice_1 transition_height' unit='ms'>
+        <input type='number' class='slice_2 transition_height' unit='ms'>
+        <input type='number' class='slice_3 transition_height' unit='ms'>
+        <input type='number' class='slice_4 transition_height' unit='ms'>
+        <input type='number' class='slice_5 transition_height' unit='ms'>
+
+    </div>
 
 </body>
 </html>

@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
 
     <script type="text/javascript">
       $(document).ready(function(){
         $('input').on('change', update_values);
         $('#pre_recorded_sets a').on('click', update_layout)
+        $('button[role=export]').on('click', export_data);
 
         function update_layout(e) {
           if ( $(this).hasClass('vd') ) {
@@ -253,14 +254,49 @@
           
 
           if (param.includes('transition_')) {
-            console.log('transition occuring');
-
             var property = param.replace("transition_", "");
             var string_value = property + value + "ease-in-out 0ms";
             $(selector).css('transition',value);
           } else {
             $(selector).css(param,value);  
           }
+          
+        }
+
+        function export_data() {
+          console.log('exporting');
+          var export_string = "";
+          export_string += "$('input.slice_1.left').val( "+$('input.slice_1.left').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_2.left').val( "+$('input.slice_2.left').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_3.left').val( "+$('input.slice_3.left').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_4.left').val( "+$('input.slice_4.left').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_5.left').val( "+$('input.slice_5.left').val() + ").trigger('change');\n";
+          export_string += "\n";
+          export_string += "$('input.slice_1.top').val( "+$('input.slice_1.top').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_2.top').val( "+$('input.slice_2.top').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_3.top').val( "+$('input.slice_3.top').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_4.top').val( "+$('input.slice_4.top').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_5.top').val( "+$('input.slice_5.top').val() + ").trigger('change');\n";
+          export_string += "\n";
+          export_string += "$('input.slice_1.width').val( "+$('input.slice_1.width').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_2.width').val( "+$('input.slice_2.width').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_3.width').val( "+$('input.slice_3.width').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_4.width').val( "+$('input.slice_4.width').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_5.width').val( "+$('input.slice_5.width').val() + ").trigger('change');\n";
+          export_string += "\n";
+          export_string += "$('input.slice_1.height').val( "+$('input.slice_1.height').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_2.height').val( "+$('input.slice_2.height').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_3.height').val( "+$('input.slice_3.height').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_4.height').val( "+$('input.slice_4.height').val() + ").trigger('change');\n";
+          export_string += "$('input.slice_5.height').val( "+$('input.slice_5.height').val() + ").trigger('change');\n";
+
+          $('div#export_control textarea#export_content').show();
+          $('#export_content').val(export_string);
+          navigator.clipboard.writeText(export_string).then(function(){
+            $('<div id="message">Copied!</div>').appendTo('#export_control').hide();
+            $('#message').fadeIn(200).delay(1000).fadeOut(500);
+          });
+          
           
         }
       });
@@ -305,6 +341,9 @@
       #slice_3 { background-color: rgb(175, 0, 255); }
       #slice_4 { background-color: rgb(135, 0, 255); }
       #slice_5 { background-color: rgb(95, 0, 255); }
+
+      div#export_control textarea#export_content {width:  500px; height:  150px; display:  none;}
+      #message { background-color: green; padding: 2px; font-size: 0.8rem; color: white; width: 100px; text-align: center; font-family: sans-serif; }
 
     </style>
 
@@ -392,6 +431,11 @@
         <input type='number' class='slice_3 transition_height' unit='ms'>
         <input type='number' class='slice_4 transition_height' unit='ms'>
         <input type='number' class='slice_5 transition_height' unit='ms'>
+
+    <div id='export_control'>
+      <button role='export'>Export</button><br>
+      <textarea id='export_content'></textarea>
+    </div>
 
     </div>
 

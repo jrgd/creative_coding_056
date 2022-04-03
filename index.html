@@ -14,6 +14,33 @@
         $('button[role=export]').on('click', export_data);
 
         function update_layout(e) {
+
+          if ( $(this).hasClass('chk')) {
+            $('input.slice_1.left').val( 0).trigger('change');
+            $('input.slice_2.left').val( 20).trigger('change');
+            $('input.slice_3.left').val( 40).trigger('change');
+            $('input.slice_4.left').val( 60).trigger('change');
+            $('input.slice_5.left').val( 80).trigger('change');
+
+            $('input.slice_1.top').val( 0).trigger('change');
+            $('input.slice_2.top').val( 20).trigger('change');
+            $('input.slice_3.top').val( 0).trigger('change');
+            $('input.slice_4.top').val( 20).trigger('change');
+            $('input.slice_5.top').val( 0).trigger('change');
+
+            $('input.slice_1.width').val( 20).trigger('change');
+            $('input.slice_2.width').val( 20).trigger('change');
+            $('input.slice_3.width').val( 20).trigger('change');
+            $('input.slice_4.width').val( 20).trigger('change');
+            $('input.slice_5.width').val( 20).trigger('change');
+
+            $('input.slice_1.height').val( 20).trigger('change');
+            $('input.slice_2.height').val( 20).trigger('change');
+            $('input.slice_3.height').val( 20).trigger('change');
+            $('input.slice_4.height').val( 20).trigger('change');
+            $('input.slice_5.height').val( 20).trigger('change');
+
+          }
           if ( $(this).hasClass('vd') ) {
             $('input.slice_1.left').val(0).trigger('change');
             $('input.slice_2.left').val(0).trigger('change');
@@ -367,6 +394,7 @@
       <a href='#' class='vsg'>vertical stripes growing</a>
       <a href='#' class='hd'>horizontal dispatch</a>
       <a href='#' class='co'>containing</a>
+      <a href='#' class='chk'>checks</a>
       <h2>Transitions</h2>
       <a href='#' class='st'>slow transition</a>
       <a href='#' class='ft'>fast transition</a>
